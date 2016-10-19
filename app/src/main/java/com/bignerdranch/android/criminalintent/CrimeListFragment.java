@@ -69,6 +69,19 @@ public class CrimeListFragment extends Fragment {
             mTitleTextView = (TextView) itemView.findViewById(R.id.list_item_crime_title_text_view);
             mDateTextView = (TextView) itemView.findViewById(R.id.list_item_crime_date_text_view);
             mSolvedCheckBox = (CheckBox) itemView.findViewById(R.id.list_item_crime_solved_check_box);
+            // This Part is not on the book and I added it so it make more sense.
+            // |
+            // V
+            mSolvedCheckBox.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mCrime != null) {
+                        mCrime.setSolved(mSolvedCheckBox.isChecked());
+                    }
+                }
+            });
+            // ^
+            // |
         }
 
         public void bindCrime(Crime crime) {
