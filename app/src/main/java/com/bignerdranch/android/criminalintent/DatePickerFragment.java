@@ -64,13 +64,13 @@ public class DatePickerFragment extends DialogFragment {
                                 int month = mDatePicker.getMonth();
                                 int day = mDatePicker.getDayOfMonth();
                                 Date date = new GregorianCalendar(year, month, day).getTime();
-                                sendReqult(Activity.RESULT_OK, date);
+                                sendResult(Activity.RESULT_OK, date);
                             }
                         })
                 .create();
     }
 
-    private void sendReqult(int resultCode, Date date) {
+    private void sendResult(int resultCode, Date date) {
         if (getTargetFragment() == null) {
             return;
         }

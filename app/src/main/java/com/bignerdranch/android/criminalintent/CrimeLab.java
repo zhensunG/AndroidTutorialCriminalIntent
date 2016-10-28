@@ -28,12 +28,16 @@ public class CrimeLab {
         // Singleton
         mCrimes = new ArrayList<>();
 
-        for (int i = 1; i <= 100; i++) {
+        for (int i = 1; i <= 9; i++) {
             Crime crime = new Crime();
             crime.setTitle("Crime #" + i);
             crime.setSolved(i % 2 == 1); // Every other one.
             mCrimes.add(crime);
         }
+    }
+
+    public void addCrime(Crime c) {
+        mCrimes.add(c);
     }
 
     public List<Crime> getCrimes() {
